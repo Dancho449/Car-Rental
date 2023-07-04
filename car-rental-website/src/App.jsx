@@ -3,24 +3,37 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom"
 import Layout from "./Components/Layout"
 import Home from "./Pages/Home"
+import About from "./Pages/About"
 import Cars from "./Pages/Car/Cars"
 import CarDetail from "./Pages/Car/CarDetail"
+import HostLayout from "./Components/HostLayout"
+import Dashboard from "./Pages/Host/Dashboard"
+import Income from "./Pages/Host/Income"
+import Reviews from "./Pages/Host/Reviews"
+import HostCars from "./Pages/Host/HostCars"
+import HostCarsDetails from "./Pages/Host/HostCarsDetails"
 
 function App() {
 
   return (
-    <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/cars" element={<Cars />} />
-            <Route path="/cars/:id" element={<CarDetail />} />
+            <Route path="about" element={<About />} />
+            <Route path="cars" element={<Cars />} />
+            <Route path="cars/:id" element={<CarDetail />} />
+
+            <Route path="host" element={<HostLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path="income" element={<Income />} />
+              <Route path="reviews" element={<Reviews />} />
+              <Route path="cars" element={<HostCars />} />
+              <Route path="cars/:id" element={<HostCarsDetails />} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
   )
 }
 
