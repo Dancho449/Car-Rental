@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(227, 227, 235);
+    font-family: 'Karla', sans-serif;
+}
+
+a {
+    text-decoration: unset;
+    color: unset;
+}
+header {
+    width: 100%;
+    padding: 1.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-link-home {
+    font-size: clamp(1.3rem, 2.5vw, 3rem);
+    color: black;
+    font-weight: bold;
+}
+nav > .header-links {
+    display: inline-block;
+    margin-right: .7rem;
+    font-size: .875rem;
+    color: #4D4D4D;
+    transition: all .2s ease;
+}
+nav > .header-links:hover, 
+nav > .header-links:focus {
+    font-weight: bold;
+    transform: scale(1.15);
+}
+footer {
+    background-color: #252525;
+    color: white;
+    text-align: center;
+    padding-block: 1rem;
+    margin-bottom: -137px;
+}
+.footer-heading {
+    margin-top: 2rem;
+}
+.copyright-text {
+    margin-top: 1.5rem;
+    padding-bottom: .4rem;
+}
+.home-container {
+    background-image: url(./images/home-intro-img.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 2rem .5rem;
+}
+.home-container > h1 {
+    margin: 0 auto;
+    width: 90%;
+    font-size: clamp(1.7rem, 3vw, 3.7rem)
+}
+.home-container > p {
+    margin: 1.2rem auto;
+    width: 90%;
+    font-size: .875rem;
+    line-height: 1.5;
+}
+.home-container > .home-btn {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid rgb(80, 80, 226);
+    border-radius: .5rem;
+    background-color: rgb(80, 80, 226);
+    padding-block: .5rem;
+    text-align: center;
+}
+.home-descrip-container {
+    margin-block: 50px;
+}
+.home-descrip-image {
+    display: block;
+    width: 80%;
+    margin: 1rem auto
+}
+.descrip-page-content {
+    padding-inline: 1rem;
+}
+.descrip-page-content > p, 
+.descrip-page-content > h1 {
+    width: 95%;
+    margin: 1rem auto;
+}
+.descrip-page-content > h1 {
+    font-size: clamp(1.5rem, 2.5vw, 3rem);
+}
+.descrip-page-content > p {
+    line-height: 1.2;
+}
+.descrip-page-cta {
+    margin: 1rem;
+    background-color: rgb(137, 137, 241);
+    border: 1px solid rgb(137, 137, 241);
+    border-radius: .5rem;
+    padding-inline: 1rem;
+    padding-bottom: 1rem;
+}
+.descrip-page-cta > h2 {
+    font-size: 1.3rem;
+}
+.descrip-link-button {
+    display: block;
+    width: 6.8rem;
+    background-color: #292727;
+    color: white;
+    padding: .5rem .6rem;
+    margin-top: 1.4rem;
+    margin-bottom: .5rem;
+    border-radius: .6rem;
+    font-size: .875rem;
+    text-align: center;
+}

@@ -15,6 +15,7 @@ import HostCarsDetails from "./Pages/Host/HostCarsDetails"
 import HostCarInfo from "./Pages/Host/HostCarInfo"
 import HostCarPricing from "./Pages/Host/HostCarPricing"
 import HostCarPhotos from "./Pages/Host/HostCarPhotos"
+import NotFound from "./Components/NotFound"
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
                 <Route path="photos" element={<HostCarPhotos />} />
               </Route>
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>

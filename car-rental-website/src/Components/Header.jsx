@@ -10,7 +10,7 @@ export default function Header() {
 
     return (
         <header>
-            <Link className="header-link-home" to="/">#CARHEAVEN</Link>
+            <Link className="header-link-home" to="/">#CARHAVEN</Link>
             <nav>
                 <NavLink 
                 className='header-links'
