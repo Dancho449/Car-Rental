@@ -90,13 +90,11 @@ footer {
     width: 80%;
     margin: 1rem auto
 }
-.descrip-page-content {
-    padding-inline: 1rem;
-}
 .descrip-page-content > p, 
 .descrip-page-content > h1 {
     width: 95%;
     margin: 1rem auto;
+    padding-inline: 1rem;
 }
 .descrip-page-content > h1 {
     font-size: clamp(1.5rem, 2.5vw, 3rem);
@@ -125,5 +123,62 @@ footer {
     margin-bottom: .5rem;
     border-radius: .6rem;
     font-size: .875rem;
+    text-align: center;
+}
+.about-hero-image {
+    width: 100%;
+}
+.about-num-container {
+    background-color: white;
+    padding: 1.5rem .7rem;
+}
+.about-num {
+    text-align: center;
+}
+.about-num:not(:last-child) {
+    margin-bottom: 4rem;
+}
+.about-num-image {
+    width: 120px;
+}
+.about-num > h1, 
+.about-num > p {
+    width: 95%;
+    margin: 1rem auto;
+    padding-inline: .5rem;
+}
+.about-num > h1 {
+    font-size: clamp(1.5rem, 2.5vw, 3rem);
+}
+.about-num > p {
+    font-size: .9rem;
+    line-height: 1.4;
+}
+.about-page-cta {
+    padding: 1.7rem 1rem;
+}
+.link-button {
+    display: block;
+    width: 8.8rem;
+    border-radius: .4rem;
+    background-color: rgb(80, 80, 226);
+    color: white;
+    padding: .5rem;
+    margin-top: 1.7rem;
+}
+.not-found-container {
+    padding: 0 1rem;
+    margin-top: 4rem;
+}
+.not-found-container > h1 {
+    font-size: clamp(1.7rem, 2.5vw, 3rem);
+}
+.not-found-btn {
+    display: block;
+    margin: 1.5rem auto;
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
     text-align: center;
 }

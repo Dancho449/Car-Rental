@@ -17,7 +17,7 @@ import HostCarPricing from "./Pages/Host/HostCarPricing"
 import HostCarPhotos from "./Pages/Host/HostCarPhotos"
 import NotFound from "./Components/NotFound"
 
-function App() {
+export default function App() {
 
   return (
       <BrowserRouter>
@@ -43,7 +43,6 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+
   )
 }
-
-export default App

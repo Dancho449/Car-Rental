@@ -14,11 +14,12 @@ export default function CarDetail() {
     }, [Params.id])
 
     const search = location.state?.search || ""
+    const type = location.state?.type || "all"
 
     return(
         <div className="car-detail-container">
             <Link to={`..${search}`} relative="path" className="back-btn">
-                &larr;<span>Back to cars</span>
+                &larr;<span>Back to {type} cars</span>
             </Link>
             {cars ? (
                 <div className="car-detail">
@@ -36,3 +37,10 @@ export default function CarDetail() {
        
     )
 }
+/*
+ export async function getVan(){
+    const res = await fetch('/api/vans')
+    const data = await res.json()
+    return data.vans
+ }
+*/

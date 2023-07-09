@@ -18,7 +18,7 @@ export default function Car() {
 
     const CarElements = displayCars.map(car => (
         <div key={car.id} className="car-tile">
-            <Link to={car.id} state={{ search: `?${searchParams.toString()}` }}>
+            <Link to={car.id} state={{ search: `?${searchParams.toString()}`, type: typeFilter }}>
                 <img src={car.imageUrl} />
                 <div className="car-info">
                     <h3>{car.name}</h3>
