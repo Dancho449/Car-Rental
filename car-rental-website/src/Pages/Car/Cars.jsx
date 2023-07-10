@@ -1,9 +1,14 @@
 import React from "react"
-import { Link, useSearchParams } from "react-router-dom"
+import { Link, useSearchParams, useLoaderData } from "react-router-dom"
+import { getVans } from "../../api"
+
+export function loader(){
+    return getVans()
+}
 
 export default function Car() {
-    const [cars, setCars] = React.useState([])
     const [searchParams, setSearchParams] = useSearchParams()
+    const cars = useLoaderData()
 
     const typeFilter = searchParams.get("type")
     
