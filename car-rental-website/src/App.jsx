@@ -17,6 +17,7 @@ import HostCarPricing from "./Pages/Host/HostCarPricing"
 import HostCarPhotos from "./Pages/Host/HostCarPhotos"
 import NotFound from "./Components/NotFound"
 import Error from "./Pages/Error"
+import Login from "./Pages/Login"
 
 export default function App() {
 
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
+            <Route path="login" element={<Login />} />
             <Route path="cars" element={<Cars />} errorElement={<Error />} loader={carLoader}/>
             <Route path="cars/:id" element={<CarDetail />} />
 
