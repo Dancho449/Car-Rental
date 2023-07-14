@@ -1,24 +1,20 @@
 import React from "react"
-import { useParams, Link, NavLink, Outlet } from "react-router-dom"
+import { Link, NavLink, Outlet, useLoaderData,redirect } from "react-router-dom"
+import { getHostCars } from "../../api"
+import { requireAuth } from "../../utils"
+
+export async function loader({ params }){
+    await requireAuth()
+    return getHostCars(params.id)
+}
 
 export default function HostCarsDetails(){
-    const { id } = useParams()
-    const [currentCar, setCurrentCar] = React.useState(null)
+    const currentCar = useLoaderData()
 
     const styles = {
         fontWeight: "bold",
         textDecoration: "underline",
         color: "#161616"
-    }
-
-    React.useEffect(() => {
-        fetch(`/api/host/vans/${id}`)
-            .then(res => res.json())
-            .then(data => setCurrentCar(data.vans))
-    }, [])
-
-    if(!currentCar){
-        return <h2>Loading...</h2>
     }
 
     return(
@@ -51,7 +47,7 @@ export default function HostCarsDetails(){
                     </NavLink>
                 </nav>
 
-                <Outlet context={[currentCar, setCurrentCar]}/>
+                <Outlet context={{ currentCar }}/>
             </div>
         </section>
     )

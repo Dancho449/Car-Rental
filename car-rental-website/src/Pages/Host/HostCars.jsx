@@ -1,16 +1,17 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, redirect, useLoaderData } from "react-router-dom"
+import { getHostCars } from "../../api"
+import { requireAuth } from "../../utils"
+
+export async function loader(){
+    await requireAuth()
+    return getHostCars() 
+}
 
 export default function HostCars(){
-    const [car, setCar] = React.useState([])
+    const cars = useLoaderData()
 
-    React.useEffect(() => {
-        fetch('/api/host/vans')
-            .then(res => res.json())
-            .then(data => setCar(data.vans))
-    }, [])
-
-    const HostCarElements = car.map(car => (
+    const HostCarElements = cars.map(car => (
         <Link to={car.id} key={car.id} className="host-car-detail-link-container">
             <div className="host-car-single" key={car.id}>
                 <img src={car.imageUrl} alt={`Photo of ${car.name}`} />
@@ -30,3 +31,4 @@ export default function HostCars(){
         </div>
     )
 }
+

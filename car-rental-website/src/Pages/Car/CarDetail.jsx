@@ -1,17 +1,15 @@
 import React from "react"
-import { useParams, useLocation, Link } from "react-router-dom"
+import { useLocation, Link, useLoaderData } from "react-router-dom"
+import { getCars } from "../../api"
+
+export function loader({ params }){
+    return getCars(params.id)
+}
 
 export default function CarDetail() {
-    const Params = useParams()
     const location = useLocation()
-    const [cars, setCars] = React.useState(null)
+    const cars = useLoaderData()
 
-
-    React.useEffect(() => {
-        fetch(`/api/vans/${Params.id}`)
-            .then(res => res.json())
-            .then(data => setCars(data.vans))
-    }, [Params.id])
 
     const search = location.state?.search || ""
     const type = location.state?.type || "all"
@@ -21,7 +19,6 @@ export default function CarDetail() {
             <Link to={`..${search}`} relative="path" className="back-btn">
                 &larr;<span>Back to {type} cars</span>
             </Link>
-            {cars ? (
                 <div className="car-detail">
                     <img src={cars.imageUrl} />
                     <i className={`car-type ${cars.type} selected`}>
@@ -32,15 +29,7 @@ export default function CarDetail() {
                     <p>{cars.description}</p>
                     <button className="link-button">Rent this car</button>
                 </div>
-            ) : <h2>Loading...</h2>}
         </div>
        
     )
 }
-/*
- export async function getVan(){
-    const res = await fetch('/api/vans')
-    const data = await res.json()
-    return data.vans
- }
-*/

@@ -1,9 +1,9 @@
 import React from "react"
 import { Link, useSearchParams, useLoaderData } from "react-router-dom"
-import { getVans } from "../../api"
+import { getCars } from "../../api"
 
 export function loader(){
-    return getVans()
+    return getCars()
 }
 
 export default function Car() {
@@ -11,13 +11,6 @@ export default function Car() {
     const cars = useLoaderData()
 
     const typeFilter = searchParams.get("type")
-    
-   
-    React.useEffect(() => {
-        fetch('/api/vans')
-            .then(res => res.json())
-            .then(data => setCars(data.vans))
-    }, [])
 
     const displayCars = typeFilter ? cars.filter(car => car.type === typeFilter) : cars
 

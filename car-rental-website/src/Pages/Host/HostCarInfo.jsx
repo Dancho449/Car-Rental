@@ -2,7 +2,7 @@ import React from "react"
 import  { useOutletContext } from "react-router-dom"
 
 export default function HostCarInfo(){
-    const [currentCar, setCurrentCar] = useOutletContext()
+    const { currentCar } = useOutletContext()
     return(
         <section className="host-car-detail-info">
             <h4>Name: <span>{currentCar.name}</span></h4>
