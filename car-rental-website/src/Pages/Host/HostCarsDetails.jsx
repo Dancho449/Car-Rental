@@ -1,7 +1,7 @@
 import React from "react"
-import { Link, NavLink, Outlet, useLoaderData,redirect } from "react-router-dom"
+import { Link, NavLink, Outlet, useLoaderData } from "react-router-dom"
 import { getHostCars } from "../../api"
-import { requireAuth } from "../../utils"
+import { requireAuth } from "../../utils.js"
 
 export async function loader({ params }){
     await requireAuth()
@@ -18,7 +18,7 @@ export default function HostCarsDetails(){
     }
 
     return(
-        <section>
+        <section className="host-car-detail-outlet-container">
             <Link to=".." relative="path" className="back-btn">
             &larr;<span>Back to Cars</span>
             </Link>
@@ -26,11 +26,13 @@ export default function HostCarsDetails(){
             <div className="host-car-detail-layout-container">
                 <div className="host-car-detail">
                     <img src={currentCar.imageUrl} alt="" width="150px"/>
-                    <i className={`car-type ${currentCar.type} selected`}>
+                    <div className="host-car-detail-info-text">
+                        <i className={`car-type ${currentCar.type} selected`}>
                         {currentCar.type}
-                    </i>
-                    <h2>{currentCar.name}</h2>
-                    <p className="car-price"><span>${currentCar.price}</span>/day</p>  
+                        </i>
+                        <h2>{currentCar.name}</h2>
+                        <p className="car-price"><span>${currentCar.price}</span>/day</p> 
+                    </div>
                 </div>
 
                 <nav className="host-car-detail-nav">

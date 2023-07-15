@@ -1,7 +1,7 @@
 import React from "react"
-import { Link, redirect, useLoaderData } from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom"
 import { getHostCars } from "../../api"
-import { requireAuth } from "../../utils"
+import { requireAuth } from "../../utils.js"
 
 export async function loader(){
     await requireAuth()
@@ -23,7 +23,7 @@ export default function HostCars(){
         </Link>
     ))
     return(
-        <div>
+        <div className="host-car-container">
             <h2>Your Listed Vehicles</h2>
             <main>
                 {HostCarElements}
