@@ -1,9 +1,10 @@
-import { redirect } from "react-router-dom"
+import { mutateResponse as redirect } from "./utility"
 
 export async function requireAuth() {
     const isLoggedIn = false
     
     if (!isLoggedIn) {
-        return redirect("/login")
+        throw redirect("/login")
     }
+    return null
 }
