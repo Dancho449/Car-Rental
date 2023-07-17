@@ -1,10 +1,10 @@
 import { mutateResponse as redirect } from "./utility"
 
 export async function requireAuth() {
-    const isLoggedIn = false
+    const isLoggedIn = localStorage.getItem("loggedIn")
     
     if (!isLoggedIn) {
-        throw redirect("/login")
+        throw redirect("/login?message=You must login first")
     }
     return null
 }

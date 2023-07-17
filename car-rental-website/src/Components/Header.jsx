@@ -15,6 +15,9 @@ export default function Header() {
     function toggle(){
         setClicked(prevState => !prevState)
     }
+    function fakeLogOut(){
+        localStorage.removeItem("loggedin")
+    }
 
     return (
         <>
@@ -46,6 +49,7 @@ export default function Header() {
                     
                 </header>
                 <Sidebar click={clicked}/>
+                <button onClick={fakeLogOut}>X</button>
         </>
     )
 }

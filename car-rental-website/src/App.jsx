@@ -16,7 +16,7 @@ import HostCarPricing from "./Pages/Host/HostCarPricing"
 import HostCarPhotos from "./Pages/Host/HostCarPhotos"
 import NotFound from "./Components/NotFound"
 import Error from "./Pages/Error"
-import Login from "./Pages/Login"
+import Login, { loader as loginLoader, action as loginAction } from "./Pages/Login"
 import { requireAuth } from "./utils.js"
 
 import "./server"
@@ -28,6 +28,8 @@ const router = createBrowserRouter(createRoutesFromElements(
           <Route
             path="login"
             element={<Login />}
+            loader={loginLoader}
+            action={loginAction}
           />
           <Route path="cars" element={<Cars />} loader={carLoader} errorElement={<Error />} />
           <Route path="cars/:id" element={<CarDetail />} loader={carDetailLoader} />

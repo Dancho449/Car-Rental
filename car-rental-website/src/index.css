@@ -488,3 +488,6 @@ footer {
 .host-car-detail-outlet-container > a {
     margin-left: .5rem;
 }
+.warning {
+    color: red;
+}
