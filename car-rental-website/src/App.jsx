@@ -6,7 +6,7 @@ import About from "./Pages/About"
 import Cars, { loader as carLoader } from "./Pages/Car/Cars"
 import CarDetail, { loader as carDetailLoader } from "./Pages/Car/CarDetail"
 import HostLayout from "./Components/HostLayout"
-import Dashboard from "./Pages/Host/Dashboard"
+import Dashboard, { loader as dashboardLoader } from "./Pages/Host/Dashboard"
 import Income from "./Pages/Host/Income"
 import Reviews from "./Pages/Host/Reviews"
 import HostCars, { loader as hostCarsLoader } from "./Pages/Host/HostCars"
@@ -16,10 +16,12 @@ import HostCarPricing from "./Pages/Host/HostCarPricing"
 import HostCarPhotos from "./Pages/Host/HostCarPhotos"
 import NotFound from "./Components/NotFound"
 import Error from "./Pages/Error"
-import Login, { loader as loginLoader, action as loginAction } from "./Pages/Login"
+import Login, { loader as loginLoader } from "./Pages/Login"
 import { requireAuth } from "./utils.js"
 
 import "./server"
+
+
 
 const router = createBrowserRouter(createRoutesFromElements(
         <Route path="/" element={<Layout />} >
@@ -29,16 +31,26 @@ const router = createBrowserRouter(createRoutesFromElements(
             path="login"
             element={<Login />}
             loader={loginLoader}
-            action={loginAction}
+            //action={loginAction}
           />
-          <Route path="cars" element={<Cars />} loader={carLoader} errorElement={<Error />} />
-          <Route path="cars/:id" element={<CarDetail />} loader={carDetailLoader} />
+          <Route 
+            path="cars" 
+            element={<Cars />} 
+            loader={carLoader} 
+            errorElement={<Error />} 
+          />
+          <Route 
+            path="cars/:id" 
+            element={<CarDetail />} 
+            loader={carDetailLoader} 
+            errorElement={<Error />} 
+          />
 
           <Route path="host" element={<HostLayout />}>
             <Route 
               index 
               element={<Dashboard />} 
-              loader={async () => await requireAuth()}
+              loader={dashboardLoader}
             />
 
             <Route 
@@ -57,11 +69,13 @@ const router = createBrowserRouter(createRoutesFromElements(
               path="cars" 
               element={<HostCars />} 
               loader={hostCarsLoader} 
+              errorElement={<Error />} 
             />
             <Route 
               path="cars/:id" 
               element={<HostCarsDetails />} 
               loader={hostCarsDetailsLoader} 
+              errorElement={<Error />} 
             >
               <Route 
                 index 

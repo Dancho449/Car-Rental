@@ -16,7 +16,7 @@ export default function Header() {
         setClicked(prevState => !prevState)
     }
     function fakeLogOut(){
-        localStorage.removeItem("loggedin")
+        localStorage.removeItem("loggedIn")
     }
 
     return (

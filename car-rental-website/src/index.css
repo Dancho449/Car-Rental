@@ -423,7 +423,8 @@ footer {
     border-radius: .3rem;
 }
 .host-car-single > img {
-    width: 27%;
+    width: 30%;
+    height: 60px;
     border-radius: .3rem;
 }
 .host-car-detail-layout-container {
