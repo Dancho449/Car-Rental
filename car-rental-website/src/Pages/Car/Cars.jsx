@@ -1,6 +1,7 @@
-import React from "react"
+import React  from "react"
 import { Link, useSearchParams, useLoaderData, defer, Await } from "react-router-dom"
 import { getCars } from "../../api"
+import BeatLoader from "react-spinners/BeatLoader"
 
 export function loader(){
     return defer({ cars: getCars() })
@@ -9,6 +10,7 @@ export function loader(){
 export default function Car() {
     const [searchParams, setSearchParams] = useSearchParams()
     const dataPromise = useLoaderData()
+    const loading = true
 
     const typeFilter = searchParams.get("type")
 
@@ -63,7 +65,11 @@ export default function Car() {
     }
     return(
         <>
-            <React.Suspense fallback={ <h2>Loading Cars...</h2> }>
+            <React.Suspense fallback={ <div className="loading-state"><BeatLoader 
+                                        loading={loading}
+                                        size={15}
+                                        color="rgb(98, 98, 192)"
+            /> </div>}>
                 <Await resolve={dataPromise.cars}>
                     {renderCarElements}
                 </Await>

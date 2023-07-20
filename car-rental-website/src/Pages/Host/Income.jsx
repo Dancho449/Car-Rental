@@ -2,9 +2,9 @@ import React from "react"
 
 export default function Income() {
     const transactionsData = [
-        { amount: 720, date: "Jan 3, '23", id: "1" },
-        { amount: 560, date: "Dec 12, '22", id: "2" },
-        { amount: 980, date: "Dec 3, '22", id: "3" },
+        { amount: "72,000", date: "Jan 3, '23", id: "1" },
+        { amount: "56,000", date: "Dec 12, '22", id: "2" },
+        { amount: "98,000", date: "Dec 3, '22", id: "3" },
     ]
     return (
         <section className="host-income">
@@ -24,10 +24,10 @@ export default function Income() {
                     Last <span>30 days</span>
                 </p>
             </div>
-            <div className="transactions">
+            <div className="transaction-container">
                 {transactionsData.map((item) => (
                     <div key={item.id} className="transaction">
-                        <h3>${item.amount}</h3>
+                        <div className="amount-income">#{item.amount} <span>Withdrawal</span></div>
                         <p>{item.date}</p>
                     </div>
                 ))}

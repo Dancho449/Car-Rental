@@ -1,5 +1,9 @@
 import React from "react"
-import { NavLink } from "react-router-dom"
+import { NavLink, Link } from "react-router-dom"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBinoculars } from '@fortawesome/free-solid-svg-icons'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faCar } from '@fortawesome/free-solid-svg-icons'
 
 export default function Sidebar(props){
     const styles = {
@@ -9,22 +13,22 @@ export default function Sidebar(props){
         <div className="sidebar"
         style={props.click ? styles : null}
         >
-            <h2>#CarHaven</h2>
+            <Link className="sidebar-header" to="/">#CARHAVEN</Link>
             <nav>
                 <NavLink 
                     className='header-links-sidebar'
                     to="/about"
-                    >About</NavLink>
+                    >About <FontAwesomeIcon icon={faBinoculars} style={{color: "#1b2f50",}} /></NavLink>
 
                     <NavLink 
                     className='header-links-sidebar'
                     to="/cars"
-                    >Cars</NavLink>
+                    >Cars <FontAwesomeIcon icon={faCar} /></NavLink>
                     
                     <NavLink 
                     className='header-links-sidebar'
                     to="/host"
-                    >Host</NavLink>
+                    >Host <FontAwesomeIcon icon={faUser} /></NavLink>
             </nav>
         </div>
     )

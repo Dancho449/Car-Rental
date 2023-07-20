@@ -46,21 +46,23 @@ export default function Login() {
             <form 
                 onSubmit={handleSubmit}
                 className="form" 
-                >
+            >
                 <input
                     name="email"
                     type="email"
                     value={loginFormData.email}
                     onChange={handleChange}
                     placeholder="Email address"
-                    />
+                />
+                <p>Hint: D@ncho.com</p>
                 <input
                     name="password"
                     type="password"
                     value={loginFormData.password}
                     onChange={handleChange}
                     placeholder="Password"
-                    />
+                />
+                <p>Hint: p123</p>
                 <button
                     disabled={status === "submitting"}
                     >

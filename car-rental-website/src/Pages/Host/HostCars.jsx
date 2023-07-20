@@ -2,6 +2,7 @@ import React from "react"
 import { Link, useLoaderData, defer, Await } from "react-router-dom"
 import { getHostCars } from "../../api"
 import { requireAuth } from "../../utils.js"
+import BeatLoader from "react-spinners/BeatLoader"
 
 export async function loader(){
     await requireAuth()
@@ -10,6 +11,7 @@ export async function loader(){
 
 export default function HostCars(){
     const dataPromise = useLoaderData()
+    const loading = true
 
     function renderCarElements(cars){
         const HostCarElements = cars.map(car => (
@@ -35,7 +37,11 @@ export default function HostCars(){
 
     return (
         <>
-            <React.Suspense fallback={<h2>Loading Cars...</h2>}>
+            <React.Suspense fallback={<div className="loading-state"><BeatLoader 
+                                        loading={loading}
+                                        size={15}
+                                        color="rgb(98, 98, 192)"
+            /> </div>}>
                 <Await resolve={dataPromise.cars}>
                     {renderCarElements}
                 </Await>
