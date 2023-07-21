@@ -8,7 +8,7 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: rgb(227, 227, 235);
-    font-family: 'Karla', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 a {
     text-decoration: unset;
@@ -16,6 +16,7 @@ a {
 }
 header {
     width: 100%;
+    height: 4.6rem;
     padding: 1.5rem 1rem;
     display: flex;
     justify-content: space-between;
@@ -29,33 +30,28 @@ header {
     color: black;
     font-weight: bold;
 }
-nav > .header-links {
-    display: inline-block;
-    margin-right: .7rem;
-    font-size: .875rem;
-    color: #4D4D4D;
-    transition: all .2s ease;
-}
-nav > .header-links:hover, 
-nav > .header-links:focus {
-    font-weight: bold;
-    transform: scale(1.15);
+.footer-container {
+    background-color: #252525;
+    color: white;
+    margin-bottom: -137px;
+    padding-block: 1rem;
 }
 footer {
-    background-color: #252525;
     color: white;
     text-align: center;
     padding-block: 1rem;
-    margin-bottom: -137px;
 }
 .footer-heading {
     margin-top: 2rem;
 }
 .copyright-text {
-    margin-top: 1.5rem;
+    margin-top: -0.5rem;
     padding-bottom: .4rem;
+    text-align: center;
+    color: white;
 }
 .home-container {
+    min-height: 15rem;
     background-image: url(./images/home-intro-img.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -93,6 +89,8 @@ footer {
     margin: 1rem auto
 }
 .descrip-page-content > p, 
+.descrip-page-content-home > p, 
+.descrip-page-content-home > h1,  
 .descrip-page-content > h1 {
     width: 95%;
     margin: 1rem auto;
@@ -114,6 +112,7 @@ footer {
 }
 .descrip-page-cta > h2 {
     font-size: 1.3rem;
+    font-weight: 600;
 }
 .descrip-link-button {
     display: block;
@@ -126,6 +125,7 @@ footer {
     border-radius: .6rem;
     font-size: .875rem;
     text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 .about-hero-image {
     width: 100%;
@@ -134,25 +134,28 @@ footer {
     background-color: white;
     padding: 2.5rem .7rem 1.5rem;
 }
-.about-num {
+.about-num, .about-num-home {
     text-align: center;
 }
 .about-num:not(:last-child) {
     margin-bottom: 4rem;
 }
-.about-num-image {
+.about-num-image, .about-num-image-home {
     width: 120px;
 }
 .about-num > h1, 
-.about-num > p {
+.about-num > p, 
+.about-num-home > h1, 
+.about-num-home > p {
     width: 95%;
     margin: 1rem auto;
     padding-inline: .5rem;
 }
-.about-num > h1 {
+.about-num > h1, .about-num-home > h1 {
     font-size: clamp(1.5rem, 2.5vw, 3rem);
+    font-weight: 600;
 }
-.about-num > p {
+.about-num > p, .about-num-home > p {
     font-size: .9rem;
     line-height: 1.4;
 }
@@ -292,9 +295,11 @@ footer {
     padding-inline: 1rem;
     margin-bottom: 2rem;
 }
-.mini-about > h2 {
+.mini-about-head {
     font-size: clamp(1.4rem, 2.5vw, 3rem);
     margin-bottom: 2.5rem;
+    text-align: center;
+    padding-inline: .5rem;
 }
 .car-list-container {
     padding-inline: 1rem;
@@ -327,6 +332,7 @@ footer {
 }
 .car-tile-img {
     width: 100%;
+    height: 4.5rem;
     border-radius: .3rem;
     box-shadow: 1px 1px 7px -1px rgba(0,0,0,0.65);
 
@@ -424,7 +430,7 @@ footer {
     font-size: 1rem;
 }
 .host-link-container {
-    padding-left: .5rem;
+    padding-left: 1rem;
 }
 .host-links {
     font-size: .9rem;
@@ -436,7 +442,7 @@ footer {
     color: #161616;
 } 
 .host-links:not(:last-child) {
-    margin-right: .5rem;
+    margin-right: .7rem;
 }
 .host-car-container {
     padding: .5rem;
@@ -453,7 +459,7 @@ footer {
     border-radius: .3rem;
 }
 .host-car-single > img {
-    width: 30%;
+    width: 6rem;
     height: 60px;
     border-radius: .3rem;
 }
@@ -676,4 +682,127 @@ footer {
 }
 .top-dashboard > a {
     font-size: .9rem;
+}
+.application {
+    display: none;
+}
+@media (min-width: 850px) {
+    .ham-btn {
+        display: none;
+    }
+    .header-link-home {
+        font-size: 1.8rem;
+    }
+    .laptop-navbar {
+        display: block;
+    }
+    nav > .header-links {
+        display: inline-block;
+        margin-right: 2.2rem;
+        font-size: 1rem;
+        color: #4D4D4D;
+        transition: all .2s ease;
+    }
+    nav > .header-links:hover, 
+    nav > .header-links:focus {
+        font-weight: bold;
+        transform: scale(1.15);
+        color: rgb(80, 80, 226);
+    }
+    .home-container {
+        height: 50vh;
+    }
+    .home-container > h1 {
+        margin: 2.5rem 0 0 1rem;
+        width: 80%;
+        font-size: 2.5rem
+    }
+    .home-container > p {
+        margin: 1rem 0 1rem 1rem;
+        width: 60%;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    .home-container > .home-btn {
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+        border: 1px solid rgb(80, 80, 226);
+        border-radius: .5rem;
+        background-color: rgb(80, 80, 226);
+        padding-block: .7rem;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    .mini-about {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+    .mini-about-head {
+        width: 80%;
+        font-size: 2.5rem;
+        text-transform: capitalize;
+        margin: 3rem auto;
+    }
+    .descrip-page-content-home > p, 
+    .descrip-page-content-home > h1 {
+        width: 100%;
+        margin: 1rem 0;
+        padding-left: 1rem;
+    }
+    .home-descrip-image {
+        width: 75%;
+    }
+    .descrip-page-content > h1 {
+        font-size: 2.3rem;
+    }
+    .descrip-page-content > p {
+        line-height: 1.2;
+    }
+    .home-descrip-container, .descrip-page-content-home {
+        margin-bottom: 2.5rem;
+    }
+    .application {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        background-color: white;
+        padding: 2.5rem .5rem 3rem 0.5rem;
+    }
+    .blue-car-app{
+        width: 100%;
+    }
+    .app-text {
+        padding-left: .7rem;
+        width: 95%;
+    }
+    .app-text > h1 {
+        font-size: 2rem;
+        font-weight: bolder;
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.5;
+    }
+    .app-text > p {
+        font-size: .95rem;
+        color: #524f4f;
+        margin-bottom: 1.3rem;
+        line-height: 1.3;
+    }
+    .img-flex {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .img-flex > img{
+        width: 40%;
+    }
+    footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        padding-inline: .7rem;
+        text-align: left;
+    }
 }

@@ -3,32 +3,31 @@ import { Link, NavLink } from "react-router-dom"
 import hamburger from "../images/menubar-dark.png"
 import ex from "../images/x-icon.png"
 import Sidebar from "./Sidebar"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCar } from '@fortawesome/free-solid-svg-icons'
 
 export default function Header() {
     const styles = {
         fontWeight: "bold",
         textDecoration: "underline",
-        color: "#161616"
+        color: "rgb(80, 80, 226)"
     }
     const [clicked, setClicked] = React.useState(false)
 
     function toggle(){
         setClicked(prevState => !prevState)
     }
-    function fakeLogOut(){
-        localStorage.removeItem("loggedIn")
-    }
 
     return (
         <>
                 <header>
-                    <Link className="header-link-home" to="/">#CARHAVEN</Link>
+                    <Link className="header-link-home" to="/">#CARHAVEN <FontAwesomeIcon icon={faCar} style={{color: "#1d3882",}} /></Link>
                     <nav className="laptop-navbar">
                         <NavLink 
                         className='header-links'
-                        to="/about"
+                        to="/host"
                         style={({isActive}) => isActive ? styles : null}
-                        >About</NavLink>
+                        >Host</NavLink>
 
                         <NavLink 
                         className='header-links'
@@ -38,9 +37,9 @@ export default function Header() {
                         
                         <NavLink 
                         className='header-links'
-                        to="/host"
+                        to="/about"
                         style={({isActive}) => isActive ? styles : null}
-                        >Host</NavLink>
+                        >About</NavLink>
                     </nav>
                     <button className="ham-btn" onClick={toggle}>
                         <img src={clicked ? ex : hamburger } className="hamburger" />
@@ -49,7 +48,6 @@ export default function Header() {
                     
                 </header>
                 <Sidebar click={clicked}/>
-                <button onClick={fakeLogOut}>X</button>
         </>
     )
 }
