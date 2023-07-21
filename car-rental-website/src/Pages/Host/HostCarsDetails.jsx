@@ -14,7 +14,7 @@ export default function HostCarsDetails(){
     const styles = {
         fontWeight: "bold",
         textDecoration: "underline",
-        color: "#161616"
+        color: "rgb(80, 80, 226)"
     }
 
     return(
@@ -31,7 +31,7 @@ export default function HostCarsDetails(){
                         {currentCar.type}
                         </i>
                         <h2>{currentCar.name}</h2>
-                        <p className="car-price"><span>${currentCar.price}</span>/day</p> 
+                        <p className="car-price">${currentCar.price}<span>/day</span></p> 
                     </div>
                 </div>
 

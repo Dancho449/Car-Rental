@@ -1,6 +1,9 @@
 import React from "react"
 
 export default function Footer() {
+    function logOut() {
+        localStorage.removeItem("loggedIn")
+    }
     return(
         <div className="footer-container">
             <footer>
@@ -24,7 +27,7 @@ export default function Footer() {
                     <p>New York</p>
                 </div>
             </footer>
-            <p className="copyright-text">&copy;Copyright 2022 CARHEAVEN & Dancho</p>
+            <p className="copyright-text">&copy;Copyright 2022 CARHEAVEN & Dancho<button onClick={logOut} className="logout-btn">Log Out</button></p>
         </div>
     )
 }

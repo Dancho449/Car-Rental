@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import Elliot from "../../images/elliot.jpg"
 import Sandy from "../../images/sandy.jpg"
+import reviewz from "../../images/Carhaven-rating.svg"
 
 export default function Reviews() {
     const reviewsData = [
@@ -34,7 +35,7 @@ export default function Reviews() {
             </div>
             <img
                 className="graph"
-                src="/assets/images/reviews-graph.png"
+                src={reviewz}
                 alt="Review graph"
             />
             <h3>Reviews (2)</h3>
