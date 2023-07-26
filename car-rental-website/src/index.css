@@ -834,7 +834,7 @@ footer {
         padding: 2.5rem .5rem 3rem 0.5rem;
     }
     .blue-car-app{
-        width: 100%;
+        width: 80%;
     }
     .app-text {
         padding-left: .7rem;
@@ -858,7 +858,7 @@ footer {
         gap: 1.5rem;
     }
     .img-flex > img{
-        width: 35%;
+        width: 25%;
     }
     footer {
         display: flex;
