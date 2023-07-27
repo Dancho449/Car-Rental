@@ -252,10 +252,10 @@ footer {
     left: -180px;
     z-index: 1;
     width: 180px;
-    height: 100vh;
+    height: 100%;
     padding: .5rem;
     background-image: url(../src/images/sidebar-wave-light.svg);
-    background-position: 46% 30%;
+    background-position: 46% -60%;
     background-repeat: no-repeat;
     background-size: cover;
     transition: all 0.3s ease;
